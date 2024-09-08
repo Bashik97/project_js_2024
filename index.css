@@ -27,6 +27,14 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 10px;
     background: #b8b8c3;
+    box-shadow: 12px 22px 26px -6px rgba(35,35,35,0.59);
+    -webkit-box-shadow: 12px 22px 26px -6px rgba(35,35,35,0.59);
+    -moz-box-shadow: 12px 22px 26px -6px rgba(35,35,35,0.59);
+    transition: transform 0.5s ease;
+}
+
+.user:hover {
+    transform: scale(1.05); /* Збільшення на 20% */
 }
 
 div {
@@ -42,4 +50,14 @@ h2 {
     height: 40px;
     border-radius: 10px;
     border: none;
+    font-size: 18px;
+    transition: transform 0.5s ease;
 }
+
+.button:hover {
+    transform: scale(1.1); /* Збільшення на 20% */
+}
+
+
+
+

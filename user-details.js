@@ -44,7 +44,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
     });
 
 // Звертаємось до кнопки
-const button = document.getElementById('post-title');
+const button = document.getElementById('post-title-button');
 
 // Додаємо подію кліку на кнопку
 button.addEventListener('click', () => {
@@ -61,7 +61,8 @@ button.addEventListener('click', () => {
             // Застосовуємо метод forEach для кожного поста
             posts.forEach(post => {
                 const postDiv = document.createElement('div');
-                postDiv.innerText = `Title: ${post.title}`;
+                postDiv.classList.add('post');
+                postDiv.innerHTML = `<p>Title: ${post.title}</p>`;
 
                 // Додаємо кнопку/посилання на сторінку post-details.html
                 const buttonOfPosts = document.createElement('button');
