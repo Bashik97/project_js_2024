@@ -2,7 +2,7 @@
 const post = JSON.parse(localStorage.getItem('post'));
 
 // Функція для виведення всіх ключів і значень з об'єкта за допомогою циклу
-function displayObjectDetails(obj, container) {
+function objectDetails(obj, container) {
     const ul = document.createElement('ul');
 
     for (const key in obj) {
@@ -14,7 +14,7 @@ function displayObjectDetails(obj, container) {
                 li.innerHTML = `<strong>${key}</strong>:`;
                 const nestedUl = document.createElement('ul');
                 // Рекурсивно проходимо вкладені об'єкти
-                displayObjectDetails(obj[key], nestedUl);
+                objectDetails(obj[key], nestedUl);
                 li.appendChild(nestedUl);
             } else {
                 li.innerHTML = `<strong>${key}</strong>: ${obj[key]}`;
@@ -27,7 +27,7 @@ function displayObjectDetails(obj, container) {
 
 // Виводимо інформацію про пост
 const postContainer = document.getElementById('post-container');
-displayObjectDetails(post, postContainer);
+objectDetails(post, postContainer);
 
 // Отримуємо коментарі до поточного поста
 fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
@@ -37,7 +37,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
         comments.forEach(comment => {
             // Виводимо кожен коментар як об'єкт
             const commentDiv = document.createElement('div');
-            displayObjectDetails(comment, commentDiv);
+            objectDetails(comment, commentDiv);
             commentsCont.appendChild(commentDiv);
         });
     });
