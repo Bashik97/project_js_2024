@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#user-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 500px);
+}
+
+.user {
+    padding: 20px;
+    margin: 10px;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #b8b8c3;
+}
+
+div {
+    text-align: center;
+}
+
+h2 {
+    margin: 10px;
+}
+
+.button {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
