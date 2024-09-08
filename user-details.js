@@ -1,10 +1,6 @@
 // Отримуємо дані з localStorage
 const user = JSON.parse(localStorage.getItem('user'));
 
-// Отримуємо ID користувача
-fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
-    .then(res => res.json())
-    .then(user => {
         // Звертаємось до загального контейнера (info-of-user)
         const infoOfUser = document.getElementById('info-of-user');
 
@@ -41,7 +37,6 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
             // Додаємо newUser в контейнер
             infoOfUser.appendChild(newUser);
         }
-    });
 
 // Звертаємось до кнопки
 const button = document.getElementById('post-title-button');
